@@ -1,0 +1,37 @@
+#include<iostream>
+
+
+using namespace std;
+
+struct lista {
+   int ertek;
+   lista * kov;
+
+};
+
+int main() {
+
+
+   lista * mutato = NULL;
+
+   int i;
+
+   for(i=0;i<10;i++) {
+
+      lista * ujelem = new lista;
+      ujelem->ertek = i;
+      ujelem->kov  = mutato;
+
+
+      mutato = ujelem;
+   }
+
+   while(mutato) {
+
+      cout << mutato->ertek << " ";
+      mutato = mutato->kov ;
+   }
+
+   return 0;
+
+}
